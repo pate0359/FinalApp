@@ -1,4 +1,4 @@
-<?php
+<?php 
 //save.php
 /*****************************************************
 Saves the base 64 encoded strings for the thumbnail and full sized image
@@ -18,7 +18,8 @@ if code is something else then there is an error and no id for the image
 *****************************************************/
 
 require_once("db.inc.php");
-header("Content-Type: application/json");
+header("Content-Type:application/json");
+header('Access-Control-Allow-Origin: *');
 
 if( isset( $_POST['dev'] ) && isset($_POST['img']) && isset($_POST['thumb']) ){
     //we have the device id

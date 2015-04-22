@@ -18,6 +18,7 @@ if code is something else then there is an error and no data for the image
 
 require_once("db.inc.php");
 header("Content-Type: application/json");
+header('Access-Control-Allow-Origin: *');
 
 if( isset( $_GET['dev'] ) && isset($_GET['img_id']) ){
     //we have the device id

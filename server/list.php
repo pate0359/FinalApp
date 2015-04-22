@@ -33,6 +33,7 @@ error_reporting(E_ALL);
 
 require_once("db.inc.php");
 header("Content-Type: application/json");
+header('Access-Control-Allow-Origin: *');
 
 if( isset( $_GET['dev'] ) ){
     //we have the device id
