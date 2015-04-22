@@ -37,6 +37,9 @@
         },
         "org.apache.cordova.camera": {
             "PACKAGE_NAME": "com.pate0359.finalapp"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.pate0359.finalapp"
         }
     },
     "dependent_plugins": {}

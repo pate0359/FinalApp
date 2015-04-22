@@ -37,6 +37,7 @@
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/js \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/plugins \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/css/index.css \
+/Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/css/jquery-ui.min.css \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/img/avatar.png \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/img/camera.svg \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/img/gallery.svg \
@@ -46,6 +47,8 @@
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/js/gallery.js \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/js/hammer.min.js \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/js/index.js \
+/Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/js/jquery-ui.min.js \
+/Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/js/jquery.min.js \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/js/server.js \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/js/server.js.zip \
 /Applications/MAMP/htdocs/MAD9022/FinalApp/FinalApp/platforms/android/assets/www/plugins/org.apache.cordova.camera \

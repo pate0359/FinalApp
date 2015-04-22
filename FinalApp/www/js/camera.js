@@ -6,7 +6,22 @@ var CameraJS = {
 		document.getElementById("preview").addEventListener("click", CameraJS.showPreview);
 		document.getElementById("upload").addEventListener("click", CameraJS.uploadPhoto);
 
+		var params = {
+			quality: 75,
+			destinationType: Camera.DestinationType.DATA_URL,
+			sourceType: Camera.PictureSourceType.CAMERA,
+			allowEdit: true,
+			encodingType: Camera.EncodingType.JPEG,
+			//popoverOptions: CameraPopoverOptions,
+			saveToPhotoAlbum: true
+		};
 
+		navigator.camera.getPicture(CameraJS.onSuccess, CameraJS.onFail, params);
+	},
+	onSuccess: function (imageData) {
+
+//		var image = document.getElementById('myImage');
+//		image.src = imageURI;
 		i = document.createElement("img");
 		c = document.getElementById("mycanvas");
 		//good idea to set the size of the canvas in Javascript in addition to CSS
@@ -19,6 +34,8 @@ var CameraJS = {
 			//in this sample the original is 300px x 430px
 			//we want to resize it to fill the height of our canvas - 600px;
 			//alert( i.width + " " + i.height)
+			
+			console.log("load");
 			var imgWidth = ev.currentTarget.width;
 			var imgHeight = ev.currentTarget.height;
 			var aspectRatio = imgWidth / imgHeight;
@@ -38,25 +55,10 @@ var CameraJS = {
 		//the crossOrigin property will let you use images from different domains IF the SERVER allows it
 		//and if you are using Chrome or Firefox
 		//https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image
-		i.src = "./img/hello.jpg";
+		console.log("imageURI : " +imageData);
+//		i.src = imageURI; // "./img/hello.jpg";//
+		i.src = "data:image/jpeg;base64," + imageData;
 		//		i.setAttribute("src","./img/avatar.png");
-
-		var params = {
-			quality: 75,
-			destinationType: Camera.DestinationType.DATA_URL,
-			sourceType: Camera.PictureSourceType.CAMERA,
-			allowEdit: true,
-			encodingType: Camera.EncodingType.JPEG,
-			//			  popoverOptions: CameraPopoverOptions,
-			saveToPhotoAlbum: true
-		};
-
-		navigator.camera.getPicture(CameraJS.onSuccess, CameraJS.onFail, params);
-	},
-	onSuccess: function (imageURI) {
-
-		var image = document.getElementById('myImage');
-		image.src = imageURI;
 		//image.src = "data:image/jpeg;base64," + imageData;
 	},
 	onFail: function (message) {
@@ -143,8 +145,8 @@ var CameraJS = {
 	uploadPhoto: function () {
 
 		//Get device id
-		//var devId = device.uuid;
-		var devId = "1232341";
+		var devId = device.uuid;
+		//var devId = "1232341";
 
 		//Convert to base64 string
 		var base64Str = c.toDataURL("image/jpeg", 1.0);

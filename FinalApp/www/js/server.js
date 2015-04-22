@@ -2,9 +2,10 @@ var serverJS = {
 	uploadPhotoToServer: function (deviceId, baseSring, baseSringThumb) {
 
 		var postData = "dev=" + deviceId + "&img=" + baseSring + "&thumb=" + baseSringThumb;
+//		alert(postData);
 		serverJS.sendRequest(
-			'http://localhost:8888/MAD9022/FinalApp/server/save.php',
-//			'http://faculty.edumedia.ca/griffis/mad9022/final-w15/save.php',
+//			'http://localhost:8888/MAD9022/FinalApp/server/save.php',
+			'http://faculty.edumedia.ca/griffis/mad9022/final-w15/save.php',
 			serverJS.uploadCalBack,
 			postData
 		);
@@ -30,10 +31,11 @@ var serverJS = {
 	},
 	getListOfThumbnail: function (deviceId) {
 //		var postData = "dev=" + deviceId;
-		
+		//alert(deviceId);
 		serverJS.sendRequest(
-			'http://localhost:8888/MAD9022/FinalApp/server/list.php?dev='+deviceId,
-//			'http://faculty.edumedia.ca/griffis/mad9022/final-w15/list.php?dev='+deviceId,
+//			'http://localhost:8888/MAD9022/FinalApp/server/list.php?dev='+deviceId,
+			//4e01992cacf989d5
+			'http://faculty.edumedia.ca/griffis/mad9022/final-w15/list.php?dev='+deviceId,
 			serverJS.getListCalBack,
 			null
 		);
@@ -42,16 +44,16 @@ var serverJS = {
 		var postData = "dev=" + deviceId + "&img_id="+photoId;
 		serverJS.sendRequest(
 			
-			"http://localhost:8888/MAD9022/FinalApp/server/delete.php?dev=" + deviceId + "&img_id="+photoId,
-//			"http://faculty.edumedia.ca/griffis/mad9022/final-w15/delete.php?dev=" + deviceId + "&img_id="+photoId,
+//			"http://localhost:8888/MAD9022/FinalApp/server/delete.php?dev=" + deviceId + "&img_id="+photoId,
+			"http://faculty.edumedia.ca/griffis/mad9022/final-w15/delete.php?dev=" + deviceId + "&img_id="+photoId,
 			serverJS.deleteCalBack,
 			null
 		);
 	},
 	getLargeImage: function (deviceId, photoId) {
 		serverJS.sendRequest(
-			'http://localhost:8888/MAD9022/FinalApp/server/get.php?dev=' + deviceId + '&img_id='+photoId,
-//			'http://faculty.edumedia.ca/griffis/mad9022/final-w15/get.php?dev=' + deviceId + '&img_id='+photoId,
+//			'http://localhost:8888/MAD9022/FinalApp/server/get.php?dev=' + deviceId + '&img_id='+photoId,
+			'http://faculty.edumedia.ca/griffis/mad9022/final-w15/get.php?dev=' + deviceId + '&img_id='+photoId,
 			serverJS.getLargeImageCalBack,
 			null
 		);
@@ -61,13 +63,15 @@ var serverJS = {
 	uploadCalBack: function (data) {
 
 //		var data1 = JSON.stringify(data);
-		console.log(data['responseText']);
+		//console.log(data['responseText']);
+		//alert(data['responseText'].id);
 		alert("Added Successfully");
 	},
 	getListCalBack: function (data) {
 
 		var response = JSON.parse(data["response"]);
-		galleryJS.displayGrid(response.thumnbails);
+		//alert(response.thumbnails);
+		galleryJS.displayGrid(response.thumbnails);
 		
 //		alert("get list Successfully");
 	},
@@ -94,7 +98,6 @@ var serverJS = {
 	},
 
 	// AJAX request
-
 	createAJAXObj: function () {
 		'use strict';
 		try {

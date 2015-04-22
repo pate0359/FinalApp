@@ -40,7 +40,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "org.apache.cordova.device": "0.3.0",
-    "org.apache.cordova.camera": "0.3.6"
+    "org.apache.cordova.camera": "0.3.6",
+    "org.apache.cordova.console": "0.2.13"
 }
 // BOTTOM OF METADATA
 });

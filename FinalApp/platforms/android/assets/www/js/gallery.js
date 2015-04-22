@@ -7,7 +7,9 @@ var galleryJS = {
 		deleteLi.remove();
 	},
 	displayGrid: function (thumnbails) {
-				console.log(thumnbails);
+				//console.log(thumnbails);
+		
+		document.querySelector(".items").innerHTML="";
 
 		arrayThumnbails = thumnbails;
 
@@ -49,8 +51,8 @@ var galleryJS = {
 					console.log(item.id);
 					if (item.id == idItem) {
 						//Get device id
-						//var devId = device.uuid;
-						var devId = "1232341";
+						var devId = device.uuid;
+						//var devId = "1232341";
 						serverJS.getLargeImage(devId, item.id);
 						break;
 					}
@@ -75,7 +77,7 @@ var galleryJS = {
 			div.appendChild(img);
 			div.appendChild(btn);
 			li.appendChild(div);
-			$(".items").append(li);
+			document.querySelector(".items").appendChild(li);
 		}
 
 		// Workaround for Webkit bug: force scroll height to be recomputed after the transition ends, not only when it starts
@@ -156,10 +158,10 @@ var galleryJS = {
 				buttons: {
 					"Yes": function() {
 						$(this).dialog("close");
-						document.querySelector("#dialog").remove();
+						$("#dialog").remove();
 						//Get device id
-						//var devId = device.uuid;
-						var devId = "1232341";
+						var devId = device.uuid;
+						//var devId = "1232341";
 						serverJS.deletePhoto(devId, imageId);
 						
 					},
@@ -178,7 +180,7 @@ var galleryJS = {
 			
 				var x = (rowIndex * 100) + "%",
 					y = (colIndex * 100) + "%",
-					transforms = "{ -webkit-transform: translate3d(" + x + ", " + y + ", 0); transform: translate3d(" + y + ", " + x + ", 0); }";
+					transforms = "{ -webkit-transform: translate3d(" + y + ", " + x + ", 0); transform: translate3d(" + y + ", " + x + ", 0); }";
 				rules.push(rulePattern.replace("{0}", ++index) + transforms);
 			}
 		}

@@ -169,10 +169,10 @@ var app = {
 			//galleryJS.getThumbnails();
 			
 			document.querySelector(".items").innerHTML="";
-			
+			document.querySelector(".items").innerHTML="Loading...";
 			//Get device id
-			//var devId = device.uuid;
-			var devId = "1232341";
+			var devId = device.uuid;
+			//var devId = "1232341";
 			serverJS.getListOfThumbnail(devId)
 		}
 	},
